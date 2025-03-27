@@ -302,52 +302,6 @@
         margin: 20px auto;
       
   }
-
-
-
- 
-  
-
-  /* Mobile layout (auto columns) */
-  @media (max-width: 767px) {
-    #main-menu .product-cards {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-  }
-
-  @media (min-width: 768px) {
-    #hidden .product-cards {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  /* Mobile layout (auto columns) */
-  @media (max-width: 767px) {
-    #hidden .product-cards {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-  }
-  @media (max-width: 767px) {
-    .card-image {
-      height: 120px; /* Smaller image height */
-    }
-  }
-
-  @media (max-width: 767px) {
-    .card-image {
-      max-height: 120px;
-    }
-
-    .card h2 {
-      font-size: 14px;
-    }
-
-    .back-button {
-      font-size: 12px;
-      padding: 6px 10px;
-    }
-  }
-
   .hidden{
     display: none;
   }
