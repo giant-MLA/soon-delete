@@ -27,21 +27,25 @@ tabs.forEach(tab => {
 });
 
 function showSubMenu(submenuId) {
-    const mainMenu = document.querySelector('.main-menu');
-    const subMenu = document.getElementById(submenuId + '-submenu');
-    const hidem= document.querySelector('product-cards');
-    
+  const mainMenu = document.querySelector('.main-menu');
+  const subMenu = document.getElementById(submenuId + '-submenu');
+ 
 
-    mainMenu.style.display = 'none';
-    
-    subMenu.style.display= 'block';
-    hidem.style.display='block';
-  }
+  if (mainMenu) mainMenu.style.display = 'none';
+  if (subMenu) subMenu.style.display = 'block';
+}
 
-  function goBack() {
-    const mainMenu = document.querySelector('.main-menu');
-    const subMenus = document.querySelectorAll('.submenu');
-    mainMenu.style.display = 'block';
-    subMenus.forEach(sub => sub.style.display = 'none');
-  
-  }
+
+function goBack() {
+  const mainMenu = document.querySelector('.main-menu');
+  const subMenus = document.querySelectorAll('.hidden');
+
+  if (mainMenu) mainMenu.style.display = 'block'; // Show main menu
+
+  // Hide all submenus
+  subMenus.forEach(sub => {
+      sub.style.display = 'none';
+  });
+
+
+}
