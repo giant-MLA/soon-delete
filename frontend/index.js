@@ -40,9 +40,9 @@ function goBack() {
   const mainMenu = document.querySelector('.main-menu');
   const subMenus = document.querySelectorAll('.hidden');
 
-  if (mainMenu) mainMenu.style.display = 'block'; // Show main menu
+  if (mainMenu) mainMenu.style.display = 'block';
 
-  // Hide all submenus
+  
   subMenus.forEach(sub => {
       sub.style.display = 'none';
   });

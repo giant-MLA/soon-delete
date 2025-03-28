@@ -75,6 +75,8 @@
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
     white-space: nowrap;
     justify-content: space-around; 
     align-items: center;
@@ -101,7 +103,7 @@
     background-color: #3e8e41; 
   }
   .tabs::-webkit-scrollbar {
-    height: 8px;
+    display: none;
   }
   
   .tabs::-webkit-scrollbar-thumb {
@@ -162,7 +164,7 @@
     margin-top: 20px;
   }  
   
-  /* Product Cards */
+  
   .product-cards {
     display: grid;
     grid-template-columns: repeat(4,1fr);
