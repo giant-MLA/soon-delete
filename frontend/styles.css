@@ -73,6 +73,9 @@
   
   .tabs {
     display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
     justify-content: space-around; 
     align-items: center;
     background-color: #f9f9f9;
@@ -97,7 +100,14 @@
   .tab.active {
     background-color: #3e8e41; 
   }
+  .tabs::-webkit-scrollbar {
+    height: 8px;
+  }
   
+  .tabs::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
   
   
   .search-bar {
@@ -201,12 +211,12 @@
     margin-top: 10px;
   }
   h5{
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     margin-left: 13px;
     margin-top: 5px;
   }
   h6{
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 13px;
     margin-left: 13px;
   }
