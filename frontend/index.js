@@ -1,4 +1,50 @@
+let startX = 0;
+let startY = 0;
+const threshold = 100; // Minimum swipe distance to trigger action
 
+// Detect swipe start
+document.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+});
+
+// Detect swipe end and trigger actions
+document.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  const endY = e.changedTouches[0].clientY;
+
+  const deltaX = startX - endX; // Positive = swipe left, Negative = swipe right
+  const deltaY = startY - endY;
+
+  // Only consider horizontal swipes with minimal vertical movement
+  if (Math.abs(deltaX) > threshold && Math.abs(deltaY) < threshold) {
+    const activeSection = document.querySelector('.section.active');
+
+    if (activeSection?.classList.contains('submenu-container')) {
+      // In a submenu: swipe left (deltaX positive) to go back
+      if (deltaX > threshold) {
+        goBack();
+      }
+    } else {
+      // In main menu: swipe left/right to switch tabs
+      const tabs = document.querySelectorAll('.tab');
+      const currentTab = document.querySelector('.tab.active');
+      const currentTabIndex = Array.from(tabs).indexOf(currentTab);
+
+      if (currentTabIndex === -1) return;
+
+      if (deltaX > threshold) { // Swipe left → Previous tab
+        if (currentTabIndex > 0) {
+          tabs[currentTabIndex - 1].click();
+        }
+      } else if (deltaX < -threshold) { // Swipe right → Next tab
+        if (currentTabIndex < tabs.length - 1) {
+          tabs[currentTabIndex + 1].click();
+        }
+      }
+    }
+  }
+});
 const tabs = document.querySelectorAll(".tab");
 const sections = document.querySelectorAll(".section");
 
@@ -49,3 +95,9 @@ function goBack() {
 
 
 }
+
+document.body.addEventListener('touchmove', (e) => {
+  if (isSwiping) {
+    e.preventDefault();
+  }
+});
