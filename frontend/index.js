@@ -20,14 +20,14 @@ document.addEventListener('touchend', (e) => {
   if (Math.abs(deltaX) > threshold && Math.abs(deltaY) < threshold) {
     const activeSection = document.querySelector('.section.active');
 
-    if (activeSection?.classList.contains('submenu-container')) {
+    if (activeSection?.classList.contains('hidden')) {
       // In a submenu: swipe left (deltaX positive) to go back
       if (deltaX > threshold) {
         goBack();
       }
     } else {
       // In main menu: swipe left/right to switch tabs
-      const tabs = document.querySelectorAll('.tab');
+      const tabs = document.querySelectorAll('.tabs');
       const currentTab = document.querySelector('.tab.active');
       const currentTabIndex = Array.from(tabs).indexOf(currentTab);
 
