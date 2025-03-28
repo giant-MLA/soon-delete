@@ -41,11 +41,28 @@
     padding: 0; 
   }
   
-  /* Header Section */
+  
   header {
     text-align: center;
     background-color: #fff;
     padding: 20px 10px; 
+  }
+  .section-heading {
+    background-color: #e8f5e9; /* Soft green background */
+    color: #333;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 768px) {
+    .section-heading {
+      font-size: 18px;
+      padding: 10px;
+    }
   }
   
   .banner-image {
