@@ -26,6 +26,7 @@
       <button class="tab" data-section="Cigarette">Cigarette</button>
       <button class="tab" data-section="Coffee">HighView Coffee</button>
       <button class="tab" data-section="Mocktails">Cocktail & Mocktail</button>
+     <!--  <button class="tab" data-section="happy">Happy hour</button> -->
       <button class="tab" data-section="spa">SPA</button>
       <button class="tab" data-section="sangoma">Acrobatic show (Highview Hotel)</button>
       <button class="tab" data-section="Activities">Activities</button>
@@ -107,6 +108,10 @@
       <div class="card" onclick="showSubMenu('tequila')">
         <img src="imgs/tequila/camino tequila.jpeg" alt="LIQUER" class="card-image">
         <h2>Tequila</h2>
+      </div>
+      <div class="card" onclick="showSubMenu('happy')">
+        <img src="imgs/happy/bucket.png" alt="BUCKET" class="card-image">
+        <h2>HappyHour</h2>
       </div>
     </div>
     </div>
@@ -761,6 +766,24 @@
          
         </div>    
     </div>
+  <!-- happy hour ---->
+<div id="happy-submenu" class="hidden">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <div class="product-cards">
+          <div class="card">
+            <img src="imgs/happy/bucket.png" alt="bucket" class="some-image">
+            <div class="card-details">
+              <h5>Happy hours</h5>
+              <p> bucket with 6 beers</p>
+              <h5>$60</h5>
+            </div>
+            
+          </div>
+         
+        </div>    
+</div>
+
+  
    <div id="juices" class="section">
     <div class="product-cards">
         <div class="card">
@@ -943,7 +966,10 @@
           </div>
         </div>
       </div>
+
+  <!-- happy hour ---->
   
+  <!-- SPA --->
       <div id="spa" class="section">
        
           <div class="product-cards">
